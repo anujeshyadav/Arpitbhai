@@ -104,7 +104,7 @@ const AddProduct = () => {
               <CardHeader className="border-0">
                 <Row>
                   <Col lg="4" md="4" sm="12">
-                    <h3 className="mb-0">Add Product</h3>
+                    <h3 className="mb-0">Add</h3>
                   </Col>
                   <Col lg="8" md="8" sm="12">
                     <div className="d-flex justify-content-end">
@@ -141,21 +141,37 @@ const AddProduct = () => {
                       <Label>Model Id</Label>
                       <Input
                         name="modalId"
-                        placeholder="Enter Modal id"
+                        placeholder="Enter Model id"
                         onChange={handleChange}
                         value={Category.modalId}
                         type="text"
                       ></Input>
                     </Col>
+                  </Row>
+                  <Row className="mt-2">
                     <Col className="mb-3" lg="4" md="4" sm="6" xs="12">
-                      <Label>Points Free</Label>
-                      <Input
-                        placeholder="Enter Points"
-                        name="Pointsfree"
-                        onChange={handleChange}
-                        value={Category.Pointsfree}
-                        type="text"
-                      ></Input>
+                      <span>
+                        <span> Free</span>
+                        <Input
+                          className="mx-3 mt-2"
+                          placeholder="Enter Points"
+                          name="Pointsfree"
+                          onChange={handleChange}
+                          value={Category.Pointsfree}
+                          type="radio"
+                        />{" "}
+                      </span>
+                      <span className="mx-5">
+                        <span> Points</span>
+                        <Input
+                          className="mx-2 mt-2"
+                          placeholder="Enter Points"
+                          name="Pointsfree"
+                          onChange={handleChange}
+                          value={Category.Pointsfree}
+                          type="radio"
+                        />{" "}
+                      </span>
                     </Col>
                   </Row>
                   <Row>
