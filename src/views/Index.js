@@ -114,19 +114,19 @@ const Index = (props) => {
             </Card>
           </Col>
           <Col xl="4">
-            <Card className="shadow">
-              <CardHeader className="bg-transparent">
+            {/* <Card className="shadow"> */}
+            {/* <CardHeader className="bg-transparent">
                 <Row className="align-items-center"></Row>
-              </CardHeader>
-              <CardBody>
+              </CardHeader> */}
+            {/* <CardBody>
                 <div className="chart">
                   <Bar
                     data={chartExample2.data}
                     options={chartExample2.options}
                   />
                 </div>
-              </CardBody>
-            </Card>
+              </CardBody> */}
+            {/* </Card> */}
           </Col>
         </Row>
       </Container>

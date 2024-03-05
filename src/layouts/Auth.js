@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation, Route, Routes, Navigate } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
 
 import AuthNavbar from "components/Navbars/AuthNavbar.js";
-import AuthFooter from "components/Footers/AuthFooter.js";
+// import AuthFooter from "components/Footers/AuthFooter.js";
+import AdminFooter from "components/Footers/AdminFooter.js";
 
 import routes from "routes.js";
 
 const Auth = (props) => {
   const mainContent = React.useRef(null);
+  const [Height, setHeight] = useState(0);
+
   const location = useLocation();
 
   React.useEffect(() => {
@@ -22,6 +25,11 @@ const Auth = (props) => {
     document.scrollingElement.scrollTop = 0;
     mainContent.current.scrollTop = 0;
   }, [location]);
+  let height = window.innerHeight;
+  React.useEffect(() => {
+    console.log(height);
+    setHeight(height - 80);
+  }, [height]);
 
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
@@ -37,7 +45,11 @@ const Auth = (props) => {
 
   return (
     <>
-      <div className="main-content" ref={mainContent}>
+      <div
+        style={{ height: `${Height}px` }}
+        className="main-content"
+        ref={mainContent}
+      >
         {/* <AuthNavbar /> */}
         <div className="header bg-#f8f9fe py-7 py-lg-8">
           {/* <Container>
@@ -79,7 +91,9 @@ const Auth = (props) => {
           </Row>
         </Container>
       </div>
-      {/* <AuthFooter /> */}
+      {/* <div style={{ backgroundColor: "red" }} className="footerauth"> */}
+      <AdminFooter />
+      {/* </div> */}
     </>
   );
 };

@@ -1,16 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation, Route, Routes, Navigate } from "react-router-dom";
-// reactstrap components
 import { Container } from "reactstrap";
-// core components
 import AdminNavbar from "components/Navbars/AdminNavbar.js";
 import AdminFooter from "components/Footers/AdminFooter.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
-
 import routes from "routes.js";
 
 const LoginRoute = (props) => {
   const mainContent = React.useRef(null);
+  const [Height, setHeight] = useState(0);
   const location = useLocation();
 
   React.useEffect(() => {
@@ -18,6 +16,12 @@ const LoginRoute = (props) => {
     document.scrollingElement.scrollTop = 0;
     mainContent.current.scrollTop = 0;
   }, [location]);
+
+  let height = window.innerHeight;
+  React.useEffect(() => {
+    console.log(height);
+    setHeight(height);
+  }, [height]);
 
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
@@ -54,7 +58,11 @@ const LoginRoute = (props) => {
           imgAlt: "...",
         }}
       />
-      <div className="main-content" ref={mainContent}>
+      <div
+        style={{ height: `${Height}px` }}
+        className="main-content"
+        ref={mainContent}
+      >
         <AdminNavbar
           {...props}
           brandText={getBrandText(props?.location?.pathname)}

@@ -22,6 +22,7 @@ import {
   Input,
   Form,
   Label,
+  CustomInput,
 } from "reactstrap";
 import { MdAdd } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
@@ -58,7 +59,7 @@ const AddPlan = () => {
               <CardHeader className="border-0">
                 <Row>
                   <Col lg="4" md="4" sm="12">
-                    <h3 className="mb-0">Add Plan Here</h3>
+                    <h3 className="mb-0">Add</h3>
                   </Col>
                   <Col lg="8" md="8" sm="12">
                     <div className="d-flex justify-content-end">
@@ -80,8 +81,8 @@ const AddPlan = () => {
               <CardBody>
                 <Form onSubmit={handleCategorySubmit}>
                   <Row>
-                    <Col lg="4" md="4" sm="6" xs="12">
-                      <Label>Name</Label>
+                    <Col className="mb-3" lg="4" md="4" sm="6" xs="12">
+                      <Label>Plan Name</Label>
                       <Input
                         required
                         placeholder="Enter Category Name"
@@ -91,7 +92,78 @@ const AddPlan = () => {
                         type="text"
                       ></Input>
                     </Col>
-                    <Col lg="4" md="4" sm="6" xs="12">
+                    <Col className="mb-3" lg="4" md="4" sm="6" xs="12">
+                      <Label>Points</Label>
+                      <Input
+                        required
+                        placeholder="Enter Category Name"
+                        name="points"
+                        onChange={handleChange}
+                        value={Category.points}
+                        type="text"
+                      ></Input>
+                    </Col>
+                    <Col className="mb-3" lg="4" md="4" sm="6" xs="12">
+                      <Label>Final Price</Label>
+                      <Input
+                        required
+                        placeholder="Enter Category Name"
+                        name="F_Price"
+                        onChange={handleChange}
+                        value={Category.F_Price}
+                        type="text"
+                      ></Input>
+                    </Col>
+                    <Col className="mb-3" lg="4" md="4" sm="6" xs="12">
+                      <Label>Price</Label>
+                      <Input
+                        required
+                        placeholder="Enter Category Name"
+                        name="Price"
+                        onChange={handleChange}
+                        value={Category.F_Price}
+                        type="text"
+                      ></Input>
+                    </Col>
+                    <Col className="mb-3" lg="4" md="4" sm="6" xs="12">
+                      <Label>Description</Label>
+                      <Input
+                        required
+                        placeholder="Enter Category Name"
+                        name="Description"
+                        onChange={handleChange}
+                        value={Category.Description}
+                        type="text"
+                      ></Input>
+                    </Col>
+                    <Col className="mb-3" lg="4" md="4" sm="6" xs="12">
+                      <Label>Validity</Label>
+                      <Input
+                        required
+                        placeholder="Enter Category Name"
+                        name="Validity"
+                        onChange={handleChange}
+                        value={Category.Validity}
+                        type="text"
+                      ></Input>
+                    </Col>
+                    <Col className="mb-3" lg="4" md="4" sm="6" xs="12">
+                      <Label>Validity type</Label>
+                      <CustomInput
+                        required
+                        placeholder="Enter Category Name"
+                        name="ValidityType"
+                        onChange={handleChange}
+                        value={Category.ValidityType}
+                        type="select"
+                      >
+                        <option>--select--</option>
+                        <option>Week</option>
+                        <option>Month</option>
+                        <option>Year</option>
+                      </CustomInput>
+                    </Col>
+                    {/* <Col lg="4" md="4" sm="6" xs="12">
                       <Label>Category Image</Label>
                       <Input
                         className="form-control"
@@ -100,13 +172,13 @@ const AddPlan = () => {
                         // value={Category.Categoryname}
                         type="file"
                       ></Input>
-                    </Col>
+                    </Col> */}
                   </Row>
                   <Row>
                     <Col>
                       <div className="d-flex justify-content-start">
                         <Button className="mt-5" color="primary" type="submit">
-                          Submit
+                          Create
                         </Button>
                       </div>
                     </Col>

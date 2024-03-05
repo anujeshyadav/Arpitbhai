@@ -34,7 +34,7 @@ import uploadImg from "../../assets/img/upload.png";
 import { Delete, Trash2 } from "react-feather";
 import Multiselect from "multiselect-react-dropdown";
 
-const AddProduct = () => {
+const UserDetails = () => {
   const [Category, setCategory] = useState({});
   const [formValues, setFormValues] = useState([{ key: "", value: "" }]);
 
@@ -101,10 +101,8 @@ const AddProduct = () => {
       setCategory({ ...Category, [name]: Images });
     } else if (name == "featured") {
       setCategory({ ...Category, [name]: e.target.checked });
-    } else if (name == "zip") {
-      setCategory({ ...Category, [name]: e.target.files[0] });
     } else {
-      setCategory({ ...Category, [name]: e.target.value });
+      setCategory({ ...Category, [name]: value });
     }
   };
 
@@ -129,7 +127,7 @@ const AddProduct = () => {
               <CardHeader className="border-0">
                 <Row>
                   <Col lg="4" md="4" sm="12">
-                    <h3 className="mb-0">Add</h3>
+                    <h3 className="mb-0">User Details</h3>
                   </Col>
                   <Col lg="8" md="8" sm="12">
                     <div className="d-flex justify-content-end">
@@ -137,7 +135,7 @@ const AddProduct = () => {
                         title="Go Back"
                         onClick={(e) => {
                           e.preventDefault();
-                          Navigate("/admin/productList");
+                          Navigate("/admin/UserList");
                         }}
                         color="primary"
                       >
@@ -156,25 +154,25 @@ const AddProduct = () => {
                       <Input
                         required
                         placeholder="Enter Product Name"
-                        name="ProductName"
+                        name="userName"
                         onChange={handleChange}
-                        value={Category.ProductName}
+                        value={Category.userName}
                         type="text"
                       ></Input>
                     </Col>
                     <Col className="mb-3" lg="4" md="4" sm="6" xs="12">
-                      <Label>Model Id</Label>
+                      <Label>Registration Date</Label>
                       <Input
-                        name="modalId"
+                        name="RegistrationDate"
                         placeholder="Enter Model id"
                         onChange={handleChange}
-                        value={Category.modalId}
-                        type="text"
+                        value={Category.RegistrationDate}
+                        type="date"
                       ></Input>
                     </Col>
                   </Row>
                   <Row className="mt-2">
-                    <Col className="mb-4" lg="4" md="4" sm="6" xs="12">
+                    {/* <Col className="mb-4" lg="4" md="4" sm="6" xs="12">
                       <span>
                         <span> Free</span>
                         <Input
@@ -197,15 +195,15 @@ const AddProduct = () => {
                           type="radio"
                         />{" "}
                       </span>
-                    </Col>
+                    </Col> */}
                     {Category.free == "Point" && (
                       <Col className="mb-3" lg="4" md="4" sm="6" xs="12">
-                        <Label>Points</Label>
+                        <Label> Current Points</Label>
                         <Input
                           min={0}
                           placeholder="Enter Points"
-                          value={Category.TotalPoints}
-                          name="TotalPoints"
+                          value={Category.CurrentPoints}
+                          name="CurrentPoints"
                           onChange={handleChange}
                           type="number"
                         ></Input>
@@ -213,16 +211,15 @@ const AddProduct = () => {
                     )}
                   </Row>
                   <Row>
-                    <Col lg="6" md="6" sm="6" xs="12">
-                      <div className="d-flex justify-content-center">
+                    <Col lg="2" md="2" sm="6" xs="12">
+                      <div className="d-flex justify-content-start">
                         <Label>Images</Label>
                       </div>
 
-                      <div className="parent">
+                      {/* <div className="parent">
                         <div className="file-upload">
                           <img height="25px" src={uploadImg} alt="upload" />
                           <p>Click box to upload</p>
-                          {/* <p>Maximun file size 10mb</p> */}
                           <input
                             multiple
                             type="file"
@@ -230,25 +227,7 @@ const AddProduct = () => {
                             onChange={handleChange}
                           />
                         </div>
-                      </div>
-                    </Col>
-                    <Col lg="6" md="6" sm="6" xs="12">
-                      <div className="d-flex justify-content-center">
-                        <Label>Select Zip file</Label>
-                      </div>
-
-                      <div className="parent">
-                        <div className="file-upload">
-                          <img height="25px" src={uploadImg} alt="upload" />
-                          <p>Click box to upload Zip</p>
-                          {/* <p>Maximun file size 10mb</p> */}
-                          <input
-                            type="file"
-                            name="zip"
-                            onChange={handleChange}
-                          />
-                        </div>
-                      </div>
+                      </div> */}
                     </Col>
                     <Col>
                       <div>
@@ -291,7 +270,7 @@ const AddProduct = () => {
                         type="text"
                       ></Input>
                     </Col>
-                    <Col className="mb-3" lg="4" md="4" sm="6" xs="12">
+                    {/* <Col className="mb-3" lg="4" md="4" sm="6" xs="12">
                       <Label>Select Category</Label>
                       <Multiselect
                         options={options} // Options to display in the dropdown
@@ -300,118 +279,7 @@ const AddProduct = () => {
                         onRemove={onRemove} // Function will trigger on remove event
                         displayValue="name" // Property name to display in the dropdown options
                       />
-                      {/* <CustomInput
-                        multiple
-                        name="Category"
-                        placeholder="Enter version"
-                        onChange={handleChange}
-                        value={Category.Category}
-                        type="select"
-                      >
-                        <option>A</option>
-                        <option>B</option>
-                        <option>C</option>
-                        <option>D</option>
-                      </CustomInput> */}
-                    </Col>
-                  </Row>
-                  <h4>
-                    <Label>More Details</Label>
-                  </h4>
-                  <Row>
-                    {/* <Col className="mb-3" lg="4" md="4" sm="6" xs="12">
-                      <Label>More Details</Label>
-                      <Input
-                        name="details"
-                        placeholder="Enter Details"
-                        onChange={handleChange}
-                        value={Category.details}
-                        type="text"
-                      ></Input>
                     </Col> */}
-                    <Col className="mb-4" lg="4" md="4" sm="6" xs="12">
-                      <span>
-                        <span> Featured</span>
-                        <Input
-                          className="mx-3 mt-2"
-                          name="featured"
-                          onChange={handleChange}
-                          value="Featured"
-                          type="checkbox"
-                        />{" "}
-                      </span>
-                    </Col>
-                  </Row>
-                  <Row>
-                    {formValues.map((element, index) => (
-                      <>
-                        <Col
-                          key={index}
-                          className="mb-2"
-                          lg="4"
-                          md="4"
-                          sm="6"
-                          xs="12"
-                        >
-                          <Label>Attributes</Label>
-
-                          <Input
-                            placeholder="Enter key name"
-                            name="key"
-                            value={element.key || ""}
-                            onChange={(e) => handleChangeInput(index, e)}
-                            type="text"
-                          ></Input>
-                        </Col>
-                        <Col
-                          key={index}
-                          className="mb-2"
-                          lg="4"
-                          md="4"
-                          sm="6"
-                          xs="12"
-                        >
-                          <Label>value</Label>
-
-                          <Input
-                            placeholder="Enter value"
-                            name="value"
-                            value={element.value || ""}
-                            onChange={(e) => handleChangeInput(index, e)}
-                            type="email"
-                          ></Input>
-                        </Col>
-                        <Col key={index} lg="4" md="4" sm="6" xs="12">
-                          {index ? (
-                            <Button
-                              type="button"
-                              className="mt-4"
-                              color="danger"
-                              onClick={() => removeFormFields(index)}
-                            >
-                              Remove
-                            </Button>
-                          ) : null}
-                          <Button
-                            color="primary"
-                            className="mt-4"
-                            type="button"
-                            onClick={() => addFormFields()}
-                          >
-                            Add
-                          </Button>
-                        </Col>
-                      </>
-                    ))}
-                  </Row>
-                  <Row>
-                    <Col>
-                      <div className="d-flex justify-content-start">
-                        <Button className="mt-5" color="primary" type="submit">
-                          Create
-                        </Button>
-                      </div>
-                    </Col>
                   </Row>
                 </Form>
               </CardBody>
@@ -423,4 +291,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default UserDetails;

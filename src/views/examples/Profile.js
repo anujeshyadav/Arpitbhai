@@ -1,22 +1,3 @@
-/*!
-
-=========================================================
-* Argon Dashboard React - v1.2.4
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-react
-* Copyright 2024 WebSite Name (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by WebSite Name
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-
-// reactstrap components
 import {
   Button,
   Card,
@@ -126,21 +107,21 @@ const Profile = () => {
             </Card>
           </Col>
           <Col className="order-xl-1" xl="8">
-            <Card className="bg-secondary shadow">
+            <Card className="bg-white shadow">
               <CardHeader className="bg-white border-0">
                 <Row className="align-items-center">
                   <Col xs="8">
-                    <h3 className="mb-0">My account</h3>
+                    <h3 className="mb-0">Update Password</h3>
                   </Col>
                   <Col className="text-right" xs="4">
-                    <Button
+                    {/* <Button
                       color="primary"
                       href="#pablo"
                       onClick={(e) => e.preventDefault()}
                       size="sm"
                     >
                       Settings
-                    </Button>
+                    </Button> */}
                   </Col>
                 </Row>
               </CardHeader>
@@ -151,59 +132,59 @@ const Profile = () => {
                   </h6>
                   <div className="pl-lg-4">
                     <Row>
-                      <Col lg="6">
+                      <Col lg="8">
                         <FormGroup>
                           <label
                             className="form-control-label"
                             htmlFor="input-username"
                           >
-                            Username
+                            Old Password
                           </label>
                           <Input
                             className="form-control-alternative"
                             defaultValue="lucky.jesse"
                             id="input-username"
-                            placeholder="Username"
+                            placeholder="old Password"
                             type="text"
                           />
                         </FormGroup>
                       </Col>
-                      <Col lg="6">
+                      <Col lg="8">
                         <FormGroup>
                           <label
                             className="form-control-label"
                             htmlFor="input-email"
                           >
-                            Email address
+                            New Password
                           </label>
                           <Input
                             className="form-control-alternative"
                             id="input-email"
-                            placeholder="jesse@example.com"
-                            type="email"
+                            placeholder="new Password"
+                            type="text"
                           />
                         </FormGroup>
                       </Col>
                     </Row>
                     <Row>
-                      <Col lg="6">
+                      <Col lg="8">
                         <FormGroup>
                           <label
                             className="form-control-label"
                             htmlFor="input-first-name"
                           >
-                            First name
+                            Confirm Password
                           </label>
                           <Input
                             className="form-control-alternative"
                             defaultValue="Lucky"
                             id="input-first-name"
-                            placeholder="First name"
+                            placeholder="Confirm Passoword"
                             type="text"
                           />
                         </FormGroup>
                       </Col>
-                      <Col lg="6">
+                      {/* <Col lg="6">
                         <FormGroup>
                           <label
                             className="form-control-label"
@@ -219,11 +200,10 @@ const Profile = () => {
                             type="text"
                           />
                         </FormGroup>
-                      </Col>
+                      </Col> */}
                     </Row>
                   </div>
-                  <hr className="my-4" />
-                  {/* Address */}
+                  {/* <hr className="my-4" />
                   <h6 className="heading-small text-muted mb-4">
                     Contact information
                   </h6>
@@ -301,7 +281,6 @@ const Profile = () => {
                     </Row>
                   </div>
                   <hr className="my-4" />
-                  {/* Description */}
                   <h6 className="heading-small text-muted mb-4">About me</h6>
                   <div className="pl-lg-4">
                     <FormGroup>
@@ -315,7 +294,21 @@ const Profile = () => {
                         type="textarea"
                       />
                     </FormGroup>
-                  </div>
+                  </div> */}
+                  <Row>
+                    <Col lg="8">
+                      <div className="d-flex justify-content-center">
+                        <Button
+                          color="primary"
+                          href="#pablo"
+                          onClick={(e) => e.preventDefault()}
+                          size="sm"
+                        >
+                          Submit
+                        </Button>
+                      </div>
+                    </Col>
+                  </Row>
                 </Form>
               </CardBody>
             </Card>

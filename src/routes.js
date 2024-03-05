@@ -6,8 +6,12 @@ import Login from "views/examples/Login.js";
 import Tables from "views/examples/Tables.js";
 import Icons from "views/examples/Icons.js";
 import UserList from "components/Pages/UserList";
+import PaymentList from "components/Pages/PaymentList";
 import CategoryList from "components/Pages/CategoryList";
 import Addcategory from "components/Pages/Addcategory";
+import UserDetails from "components/Pages/UserDetails";
+import PointHistorypage from "components/Pages/PointHistorypage";
+import Landing_UserPage from "components/Pages/Landing_UserPage.js";
 
 import PlanList from "components/Pages/PlanList";
 import AddPlan from "components/Pages/AddPlan";
@@ -40,6 +44,31 @@ var routes = [
     name: "All Users",
     icon: "ni ni-user-run text-black",
     component: <UserList />,
+    layout: "/admin",
+  },
+  {
+    hidden: true,
+    path: "/PointHistorypage/0",
+    name: "pointhistory",
+    icon: "ni ni-user-run text-black",
+    component: <PointHistorypage />,
+    layout: "/admin",
+  },
+  {
+    hidden: false,
+    path: "/LandingUserPage",
+    name: "Landing and Setting Page",
+    icon: "ni ni-user-run text-black",
+    component: <Landing_UserPage />,
+    layout: "/admin",
+  },
+  {
+    hidden: true,
+    path: "/userDetails/0",
+    name: "userDetails",
+    name: "userDetails",
+    icon: "ni ni-user-run text-black",
+    component: <UserDetails />,
     layout: "/admin",
   },
 
@@ -114,12 +143,11 @@ var routes = [
     path: "/PaymentList",
     name: "Payment List",
     icon: "ni ni-paper-diploma text-blue",
-    component: <UserList />,
+    component: <PaymentList />,
     layout: "/admin",
   },
   {
-    hidden: false,
-
+    hidden: true,
     path: "/tables",
     name: "Tables",
     icon: "ni ni-bullet-list-67 text-red",

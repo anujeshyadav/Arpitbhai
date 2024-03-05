@@ -18,12 +18,14 @@ import {
   Col,
   Button,
   UncontrolledTooltip,
+  Input,
 } from "reactstrap";
 // core components
 import { MdAdd } from "react-icons/md";
 
 import Header from "components/Headers/Header.js";
 import { useNavigate } from "react-router-dom";
+import { Edit, Eye, Trash2 } from "react-feather";
 
 const Tables = () => {
   let Navigate = useNavigate();
@@ -42,7 +44,15 @@ const Tables = () => {
                   <Col lg="4" md="4" sm="12">
                     <h3 className="mb-0">Product List</h3>
                   </Col>
-                  <Col lg="8" md="8" sm="12">
+                  <Col></Col>
+                  <Col lg="2" md="2">
+                    <Input
+                      placeholder="search here...."
+                      type="search"
+                      name="search"
+                    />
+                  </Col>
+                  <Col lg="1" md="1" sm="12">
                     <div className="d-flex justify-content-end">
                       <Button
                         onClick={(e) => {
@@ -62,15 +72,15 @@ const Tables = () => {
                 <thead className="thead-light">
                   <tr>
                     <th scope="col">Name</th>
-                    <th scope="col">Modified Date</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">ModalId</th>
-                    <th scope="col">Free Points</th>
-                    <th scope="col">Featured</th>
-                    <th scope="col">Category</th>
-                    <th scope="col">Version</th>
-                    <th scope="col">Details</th>
                     <th scope="col">Image</th>
+                    <th scope="col">Modified Date</th>
+                    <th scope="col">Publish Status</th>
+                    <th scope="col">Model Id</th>
+                    <th scope="col">Points</th>
+                    {/* <th scope="col">Featured</th> */}
+                    {/* <th scope="col">Category</th> */}
+                    {/* <th scope="col">Version</th> */}
+                    {/* <th scope="col">Details</th> */}
                     <th scope="col">Action</th>
                     <th scope="col" />
                   </tr>
@@ -90,49 +100,10 @@ const Tables = () => {
                           />
                         </a>
                         <Media>
-                          <span className="mb-0 text-sm">
-                            Argon Design System
-                          </span>
+                          <span className="mb-0 text-sm">Name </span>
                         </Media>
                       </Media>
                     </th>
-                    <td>$2,500 USD</td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        <i className="bg-warning" />
-                        pending
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
                     <td>
                       <div className="avatar-group">
                         <a
@@ -209,51 +180,42 @@ const Tables = () => {
                         </UncontrolledTooltip>
                       </div>
                     </td>
-                    {/* <td>
-                        <div className="d-flex align-items-center">
-                          <span className="mr-2">60%</span>
-                          <div>
-                            <Progress
-                              max="100"
-                              value="60"
-                              barClassName="bg-danger"
-                            />
-                          </div>
-                        </div>
-                      </td> */}
-                    <td className="text-right">
-                      <UncontrolledDropdown>
-                        <DropdownToggle
-                          className="btn-icon-only text-light"
-                          href="#pablo"
-                          role="button"
-                          size="sm"
-                          color=""
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fas fa-ellipsis-v" />
-                        </DropdownToggle>
-                        <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Action
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Another action
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Something else here
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
+                    <td>12/10/2023</td>
+                    <td>
+                      <Badge color="" className="badge-dot mr-4">
+                        PubLish
+                      </Badge>
+                    </td>
+                    <td>
+                      <Badge color="" className="badge-dot mr-4">
+                        11fdasdf445
+                      </Badge>
+                    </td>
+                    <td>
+                      <Badge color="" className="badge-dot mr-4">
+                        100
+                      </Badge>
+                    </td>
+                    <td>
+                      <span style={{ cursor: "pointer" }}>
+                        <Eye
+                          onClick={() => Navigate("/admin/addproduct/0")}
+                          color="green"
+                        />
+                      </span>
+                      <span style={{ cursor: "pointer" }}>Featured</span>
+                      <span className="mx-1" style={{ cursor: "pointer" }}>
+                        <Trash2
+                          // onClick={handleDelete}
+                          color="red"
+                        />
+                      </span>
+                      <span className="mx-1" style={{ cursor: "pointer" }}>
+                        <Edit
+                          onClick={() => Navigate("/admin/addproduct/0")}
+                          color="blue"
+                        />
+                      </span>
                     </td>
                   </tr>
                   <tr>
@@ -266,59 +228,20 @@ const Tables = () => {
                         >
                           <img
                             alt="..."
-                            src={require("../../assets/img/theme/angular.jpg")}
+                            src={require("../../assets/img/theme/bootstrap.jpg")}
                           />
                         </a>
                         <Media>
-                          <span className="mb-0 text-sm">
-                            Angular Now UI Kit PRO
-                          </span>
+                          <span className="mb-0 text-sm">Name </span>
                         </Media>
                       </Media>
                     </th>
-                    <td>$1,800 USD</td>
-                    <td>
-                      <Badge color="" className="badge-dot">
-                        <i className="bg-success" />
-                        completed
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
                     <td>
                       <div className="avatar-group">
                         <a
                           className="avatar avatar-sm"
                           href="#pablo"
-                          id="tooltip746418347"
+                          id="tooltip742438047"
                           onClick={(e) => e.preventDefault()}
                         >
                           <img
@@ -329,14 +252,14 @@ const Tables = () => {
                         </a>
                         <UncontrolledTooltip
                           delay={0}
-                          target="tooltip746418347"
+                          target="tooltip742438047"
                         >
                           Ryan Tompson
                         </UncontrolledTooltip>
                         <a
                           className="avatar avatar-sm"
                           href="#pablo"
-                          id="tooltip102182364"
+                          id="tooltip941738690"
                           onClick={(e) => e.preventDefault()}
                         >
                           <img
@@ -347,14 +270,14 @@ const Tables = () => {
                         </a>
                         <UncontrolledTooltip
                           delay={0}
-                          target="tooltip102182364"
+                          target="tooltip941738690"
                         >
                           Romina Hadid
                         </UncontrolledTooltip>
                         <a
                           className="avatar avatar-sm"
                           href="#pablo"
-                          id="tooltip406489510"
+                          id="tooltip804044742"
                           onClick={(e) => e.preventDefault()}
                         >
                           <img
@@ -365,14 +288,14 @@ const Tables = () => {
                         </a>
                         <UncontrolledTooltip
                           delay={0}
-                          target="tooltip406489510"
+                          target="tooltip804044742"
                         >
                           Alexander Smith
                         </UncontrolledTooltip>
                         <a
                           className="avatar avatar-sm"
                           href="#pablo"
-                          id="tooltip476840018"
+                          id="tooltip996637554"
                           onClick={(e) => e.preventDefault()}
                         >
                           <img
@@ -383,57 +306,48 @@ const Tables = () => {
                         </a>
                         <UncontrolledTooltip
                           delay={0}
-                          target="tooltip476840018"
+                          target="tooltip996637554"
                         >
                           Jessica Doe
                         </UncontrolledTooltip>
                       </div>
                     </td>
-                    {/* <td>
-                        <div className="d-flex align-items-center">
-                          <span className="mr-2">100%</span>
-                          <div>
-                            <Progress
-                              max="100"
-                              value="100"
-                              barClassName="bg-success"
-                            />
-                          </div>
-                        </div>
-                      </td> */}
-                    <td className="text-right">
-                      <UncontrolledDropdown>
-                        <DropdownToggle
-                          className="btn-icon-only text-light"
-                          href="#pablo"
-                          role="button"
-                          size="sm"
-                          color=""
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fas fa-ellipsis-v" />
-                        </DropdownToggle>
-                        <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Action
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Another action
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Something else here
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
+                    <td>12/10/2023</td>
+                    <td>
+                      <Badge color="" className="badge-dot mr-4">
+                        PubLish
+                      </Badge>
+                    </td>
+                    <td>
+                      <Badge color="" className="badge-dot mr-4">
+                        11fdasdf445
+                      </Badge>
+                    </td>
+                    <td>
+                      <Badge color="" className="badge-dot mr-4">
+                        100
+                      </Badge>
+                    </td>
+                    <td>
+                      <span style={{ cursor: "pointer" }}>
+                        <Eye
+                          onClick={() => Navigate("/admin/addproduct/0")}
+                          color="green"
+                        />
+                      </span>
+                      <span style={{ cursor: "pointer" }}>Featured</span>
+                      <span className="mx-1" style={{ cursor: "pointer" }}>
+                        <Trash2
+                          // onClick={handleDelete}
+                          color="red"
+                        />
+                      </span>
+                      <span className="mx-1" style={{ cursor: "pointer" }}>
+                        <Edit
+                          onClick={() => Navigate("/admin/addproduct/0")}
+                          color="blue"
+                        />
+                      </span>
                     </td>
                   </tr>
                   <tr>
@@ -446,57 +360,20 @@ const Tables = () => {
                         >
                           <img
                             alt="..."
-                            src={require("../../assets/img/theme/sketch.jpg")}
+                            src={require("../../assets/img/theme/bootstrap.jpg")}
                           />
                         </a>
                         <Media>
-                          <span className="mb-0 text-sm">Black Dashboard</span>
+                          <span className="mb-0 text-sm">Name </span>
                         </Media>
                       </Media>
                     </th>
-                    <td>$3,150 USD</td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        <i className="bg-danger" />
-                        delayed
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
                     <td>
                       <div className="avatar-group">
                         <a
                           className="avatar avatar-sm"
                           href="#pablo"
-                          id="tooltip753056318"
+                          id="tooltip742438047"
                           onClick={(e) => e.preventDefault()}
                         >
                           <img
@@ -507,14 +384,14 @@ const Tables = () => {
                         </a>
                         <UncontrolledTooltip
                           delay={0}
-                          target="tooltip753056318"
+                          target="tooltip742438047"
                         >
                           Ryan Tompson
                         </UncontrolledTooltip>
                         <a
                           className="avatar avatar-sm"
                           href="#pablo"
-                          id="tooltip441753266"
+                          id="tooltip941738690"
                           onClick={(e) => e.preventDefault()}
                         >
                           <img
@@ -525,14 +402,14 @@ const Tables = () => {
                         </a>
                         <UncontrolledTooltip
                           delay={0}
-                          target="tooltip441753266"
+                          target="tooltip941738690"
                         >
                           Romina Hadid
                         </UncontrolledTooltip>
                         <a
                           className="avatar avatar-sm"
                           href="#pablo"
-                          id="tooltip188462246"
+                          id="tooltip804044742"
                           onClick={(e) => e.preventDefault()}
                         >
                           <img
@@ -543,14 +420,14 @@ const Tables = () => {
                         </a>
                         <UncontrolledTooltip
                           delay={0}
-                          target="tooltip188462246"
+                          target="tooltip804044742"
                         >
                           Alexander Smith
                         </UncontrolledTooltip>
                         <a
                           className="avatar avatar-sm"
                           href="#pablo"
-                          id="tooltip621168444"
+                          id="tooltip996637554"
                           onClick={(e) => e.preventDefault()}
                         >
                           <img
@@ -561,57 +438,48 @@ const Tables = () => {
                         </a>
                         <UncontrolledTooltip
                           delay={0}
-                          target="tooltip621168444"
+                          target="tooltip996637554"
                         >
                           Jessica Doe
                         </UncontrolledTooltip>
                       </div>
                     </td>
-                    {/* <td>
-                        <div className="d-flex align-items-center">
-                          <span className="mr-2">72%</span>
-                          <div>
-                            <Progress
-                              max="100"
-                              value="72"
-                              barClassName="bg-danger"
-                            />
-                          </div>
-                        </div>
-                      </td> */}
-                    <td className="text-right">
-                      <UncontrolledDropdown>
-                        <DropdownToggle
-                          className="btn-icon-only text-light"
-                          href="#pablo"
-                          role="button"
-                          size="sm"
-                          color=""
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fas fa-ellipsis-v" />
-                        </DropdownToggle>
-                        <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Action
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Another action
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Something else here
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
+                    <td>12/10/2023</td>
+                    <td>
+                      <Badge color="" className="badge-dot mr-4">
+                        PubLish
+                      </Badge>
+                    </td>
+                    <td>
+                      <Badge color="" className="badge-dot mr-4">
+                        11fdasdf445
+                      </Badge>
+                    </td>
+                    <td>
+                      <Badge color="" className="badge-dot mr-4">
+                        100
+                      </Badge>
+                    </td>
+                    <td>
+                      <span style={{ cursor: "pointer" }}>
+                        <Eye
+                          onClick={() => Navigate("/admin/addproduct/0")}
+                          color="green"
+                        />
+                      </span>
+                      <span style={{ cursor: "pointer" }}>Featured</span>
+                      <span className="mx-1" style={{ cursor: "pointer" }}>
+                        <Trash2
+                          // onClick={handleDelete}
+                          color="red"
+                        />
+                      </span>
+                      <span className="mx-1" style={{ cursor: "pointer" }}>
+                        <Edit
+                          onClick={() => Navigate("/admin/addproduct/0")}
+                          color="blue"
+                        />
+                      </span>
                     </td>
                   </tr>
                   <tr>
@@ -624,59 +492,20 @@ const Tables = () => {
                         >
                           <img
                             alt="..."
-                            src={require("../../assets/img/theme/react.jpg")}
+                            src={require("../../assets/img/theme/bootstrap.jpg")}
                           />
                         </a>
                         <Media>
-                          <span className="mb-0 text-sm">
-                            React Material Dashboard
-                          </span>
+                          <span className="mb-0 text-sm">Name </span>
                         </Media>
                       </Media>
                     </th>
-                    <td>$4,400 USD</td>
-                    <td>
-                      <Badge color="" className="badge-dot">
-                        <i className="bg-info" />
-                        on schedule
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
                     <td>
                       <div className="avatar-group">
                         <a
                           className="avatar avatar-sm"
                           href="#pablo"
-                          id="tooltip875258217"
+                          id="tooltip742438047"
                           onClick={(e) => e.preventDefault()}
                         >
                           <img
@@ -687,14 +516,14 @@ const Tables = () => {
                         </a>
                         <UncontrolledTooltip
                           delay={0}
-                          target="tooltip875258217"
+                          target="tooltip742438047"
                         >
                           Ryan Tompson
                         </UncontrolledTooltip>
                         <a
                           className="avatar avatar-sm"
                           href="#pablo"
-                          id="tooltip834416663"
+                          id="tooltip941738690"
                           onClick={(e) => e.preventDefault()}
                         >
                           <img
@@ -705,14 +534,14 @@ const Tables = () => {
                         </a>
                         <UncontrolledTooltip
                           delay={0}
-                          target="tooltip834416663"
+                          target="tooltip941738690"
                         >
                           Romina Hadid
                         </UncontrolledTooltip>
                         <a
                           className="avatar avatar-sm"
                           href="#pablo"
-                          id="tooltip372449339"
+                          id="tooltip804044742"
                           onClick={(e) => e.preventDefault()}
                         >
                           <img
@@ -723,14 +552,14 @@ const Tables = () => {
                         </a>
                         <UncontrolledTooltip
                           delay={0}
-                          target="tooltip372449339"
+                          target="tooltip804044742"
                         >
                           Alexander Smith
                         </UncontrolledTooltip>
                         <a
                           className="avatar avatar-sm"
                           href="#pablo"
-                          id="tooltip108714769"
+                          id="tooltip996637554"
                           onClick={(e) => e.preventDefault()}
                         >
                           <img
@@ -741,57 +570,48 @@ const Tables = () => {
                         </a>
                         <UncontrolledTooltip
                           delay={0}
-                          target="tooltip108714769"
+                          target="tooltip996637554"
                         >
                           Jessica Doe
                         </UncontrolledTooltip>
                       </div>
                     </td>
-                    {/* <td>
-                        <div className="d-flex align-items-center">
-                          <span className="mr-2">90%</span>
-                          <div>
-                            <Progress
-                              max="100"
-                              value="90"
-                              barClassName="bg-info"
-                            />
-                          </div>
-                        </div>
-                      </td> */}
-                    <td className="text-right">
-                      <UncontrolledDropdown>
-                        <DropdownToggle
-                          className="btn-icon-only text-light"
-                          href="#pablo"
-                          role="button"
-                          size="sm"
-                          color=""
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fas fa-ellipsis-v" />
-                        </DropdownToggle>
-                        <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Action
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Another action
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Something else here
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
+                    <td>12/10/2023</td>
+                    <td>
+                      <Badge color="" className="badge-dot mr-4">
+                        PubLish
+                      </Badge>
+                    </td>
+                    <td>
+                      <Badge color="" className="badge-dot mr-4">
+                        11fdasdf445
+                      </Badge>
+                    </td>
+                    <td>
+                      <Badge color="" className="badge-dot mr-4">
+                        100
+                      </Badge>
+                    </td>
+                    <td>
+                      <span style={{ cursor: "pointer" }}>
+                        <Eye
+                          onClick={() => Navigate("/admin/addproduct/0")}
+                          color="green"
+                        />
+                      </span>
+                      <span style={{ cursor: "pointer" }}>Featured</span>
+                      <span className="mx-1" style={{ cursor: "pointer" }}>
+                        <Trash2
+                          // onClick={handleDelete}
+                          color="red"
+                        />
+                      </span>
+                      <span className="mx-1" style={{ cursor: "pointer" }}>
+                        <Edit
+                          onClick={() => Navigate("/admin/addproduct/0")}
+                          color="blue"
+                        />
+                      </span>
                     </td>
                   </tr>
                   <tr>
@@ -804,59 +624,20 @@ const Tables = () => {
                         >
                           <img
                             alt="..."
-                            src={require("../../assets/img/theme/vue.jpg")}
+                            src={require("../../assets/img/theme/bootstrap.jpg")}
                           />
                         </a>
                         <Media>
-                          <span className="mb-0 text-sm">
-                            Vue Paper UI Kit PRO
-                          </span>
+                          <span className="mb-0 text-sm">Name </span>
                         </Media>
                       </Media>
                     </th>
-                    <td>$2,200 USD</td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        <i className="bg-success" />
-                        completed
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        11
-                      </Badge>
-                    </td>
                     <td>
                       <div className="avatar-group">
                         <a
                           className="avatar avatar-sm"
                           href="#pablo"
-                          id="tooltip664029969"
+                          id="tooltip742438047"
                           onClick={(e) => e.preventDefault()}
                         >
                           <img
@@ -867,14 +648,14 @@ const Tables = () => {
                         </a>
                         <UncontrolledTooltip
                           delay={0}
-                          target="tooltip664029969"
+                          target="tooltip742438047"
                         >
                           Ryan Tompson
                         </UncontrolledTooltip>
                         <a
                           className="avatar avatar-sm"
                           href="#pablo"
-                          id="tooltip806693074"
+                          id="tooltip941738690"
                           onClick={(e) => e.preventDefault()}
                         >
                           <img
@@ -885,14 +666,14 @@ const Tables = () => {
                         </a>
                         <UncontrolledTooltip
                           delay={0}
-                          target="tooltip806693074"
+                          target="tooltip941738690"
                         >
                           Romina Hadid
                         </UncontrolledTooltip>
                         <a
                           className="avatar avatar-sm"
                           href="#pablo"
-                          id="tooltip844096937"
+                          id="tooltip804044742"
                           onClick={(e) => e.preventDefault()}
                         >
                           <img
@@ -903,14 +684,14 @@ const Tables = () => {
                         </a>
                         <UncontrolledTooltip
                           delay={0}
-                          target="tooltip844096937"
+                          target="tooltip804044742"
                         >
                           Alexander Smith
                         </UncontrolledTooltip>
                         <a
                           className="avatar avatar-sm"
                           href="#pablo"
-                          id="tooltip757459971"
+                          id="tooltip996637554"
                           onClick={(e) => e.preventDefault()}
                         >
                           <img
@@ -921,57 +702,48 @@ const Tables = () => {
                         </a>
                         <UncontrolledTooltip
                           delay={0}
-                          target="tooltip757459971"
+                          target="tooltip996637554"
                         >
                           Jessica Doe
                         </UncontrolledTooltip>
                       </div>
                     </td>
-                    {/* <td>
-                        <div className="d-flex align-items-center">
-                          <span className="mr-2">100%</span>
-                          <div>
-                            <Progress
-                              max="100"
-                              value="100"
-                              barClassName="bg-success"
-                            />
-                          </div>
-                        </div>
-                      </td> */}
-                    <td className="text-right">
-                      <UncontrolledDropdown>
-                        <DropdownToggle
-                          className="btn-icon-only text-light"
-                          href="#pablo"
-                          role="button"
-                          size="sm"
-                          color=""
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fas fa-ellipsis-v" />
-                        </DropdownToggle>
-                        <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Action
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Another action
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Something else here
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
+                    <td>12/10/2023</td>
+                    <td>
+                      <Badge color="" className="badge-dot mr-4">
+                        PubLish
+                      </Badge>
+                    </td>
+                    <td>
+                      <Badge color="" className="badge-dot mr-4">
+                        11fdasdf445
+                      </Badge>
+                    </td>
+                    <td>
+                      <Badge color="" className="badge-dot mr-4">
+                        100
+                      </Badge>
+                    </td>
+                    <td>
+                      <span style={{ cursor: "pointer" }}>
+                        <Eye
+                          onClick={() => Navigate("/admin/addproduct/0")}
+                          color="green"
+                        />
+                      </span>
+                      <span style={{ cursor: "pointer" }}>Featured</span>
+                      <span className="mx-1" style={{ cursor: "pointer" }}>
+                        <Trash2
+                          // onClick={handleDelete}
+                          color="red"
+                        />
+                      </span>
+                      <span className="mx-1" style={{ cursor: "pointer" }}>
+                        <Edit
+                          onClick={() => Navigate("/admin/addproduct/0")}
+                          color="blue"
+                        />
+                      </span>
                     </td>
                   </tr>
                 </tbody>

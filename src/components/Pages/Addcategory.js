@@ -114,8 +114,8 @@ const Tables = () => {
                       <div className="parent">
                         <div className="file-upload">
                           <img height="25px" src={uploadImg} alt="upload" />
-                          {/* <h3>Click box to upload</h3>
-                          <p>Maximun file size 10mb</p> */}
+                          <p>Click to upload</p>
+                          {/* <p>Maximun file size 10mb</p> */}
                           <input
                             type="file"
                             name="image"
@@ -129,7 +129,7 @@ const Tables = () => {
                     <Col>
                       <div className="d-flex justify-content-start">
                         <Button className="mt-5" color="primary" type="submit">
-                          Submit
+                          Create
                         </Button>
                       </div>
                     </Col>

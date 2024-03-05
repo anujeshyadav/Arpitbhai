@@ -14,6 +14,7 @@ import {
 } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 import AdminFooter from "../../components/Footers/AdminFooter";
+import logo from "../../assets/img/download.jfif";
 
 const Login = () => {
   const Navigate = useNavigate();
@@ -27,10 +28,12 @@ const Login = () => {
     <>
       <Col style={{ backgroundColor: "#cfcfd405" }} lg="5" md="7">
         <Card className="shadow border-4">
-          <CardHeader className="bg-transparent pb-5">
-            {/* <div className="text-muted text-center mt-2 mb-3">
-              <small>Sign in with</small>
-            </div> */}
+          <CardHeader className="bg-transparent pb-2">
+            <div className="text-muted text-center mt-2">
+              <small>
+                <img src={logo && logo} height={90} width="80%" alt="logo" />
+              </small>
+            </div>
             {/* <div className="btn-wrapper text-center">
               <Button
                 className="btn-neutral btn-icon"
@@ -148,11 +151,6 @@ const Login = () => {
           </Col>
         </Row> */}
       </Col>
-      {/* <Row>
-        <Col>
-          <AdminFooter />
-        </Col>
-      </Row> */}
     </>
   );
 };
