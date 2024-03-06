@@ -10,12 +10,11 @@
   "keywords": [
     "react",
     "reactjs",
-    "argon",
     "argon-react",
     "dashboard",
     "dashboard-react",
-    "argon-dashboard",
-    "argon-dashboard-react"
+    "dashboard",
+    "dashboard-react"
   ],
   "author": "WebSite Name",
   "license": "MIT",
