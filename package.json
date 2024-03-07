@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativetimofficial/argon-dashboard-react.git"
+    "url": ""
   },
   "keywords": [
     "react",
@@ -20,18 +20,15 @@
   "author": "WebSite Name",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/creativetimofficial/argon-dashboard-react/issues"
+    "url": ""
   },
-  "homepage": "https://demos.creative-tim.com/argon-dashboard-react/",
+  "homepage": "",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
-    "compile:scss": "sass src/assets/scss/argon-dashboard-react.scss src/assets/css/argon-dashboard-react.css",
-    "minify:scss": "sass src/assets/scss/argon-dashboard-react.scss src/assets/css/argon-dashboard-react.min.css --style compressed",
-    "build:scss": "npm run compile:scss && npm run minify:scss && npm run map:scss"
+    "eject": "react-scripts eject"
+   
   },
   "eslintConfig": {
     "extends": "react-app"
