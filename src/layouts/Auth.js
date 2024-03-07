@@ -27,7 +27,7 @@ const Auth = (props) => {
   }, [location]);
   let height = window.innerHeight;
   React.useEffect(() => {
-    console.log(height);
+    // console.log(height);
     setHeight(height - 80);
   }, [height]);
 

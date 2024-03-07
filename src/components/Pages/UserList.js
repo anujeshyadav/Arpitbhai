@@ -11,22 +11,22 @@ import {
   Pagination,
   PaginationItem,
   PaginationLink,
-  Progress,
+  // Progress,
   Table,
   Container,
   Row,
   Col,
-  Button,
+  // Button,
   UncontrolledTooltip,
   Input,
   CustomInput,
 } from "reactstrap";
 // core components
-import { MdAdd } from "react-icons/md";
+// import { MdAdd } from "react-icons/md";
 
 import Header from "components/Headers/Header.js";
 import { useNavigate } from "react-router-dom";
-import { Download, Edit, Eye, Trash2 } from "react-feather";
+import { Download, Eye, Trash2 } from "react-feather";
 import swal from "sweetalert";
 
 const UserList = () => {
@@ -82,7 +82,7 @@ const UserList = () => {
                     </div> */}
                   </Col>
                   <Col lg="2" md="2" sm="6">
-                    <CustomInput type="select">
+                    <CustomInput id="myid" type="select">
                       <option>--select--</option>
                       <option>Gmail</option>
                       <option>Email</option>

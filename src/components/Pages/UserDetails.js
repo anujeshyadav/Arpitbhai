@@ -24,15 +24,15 @@ import {
   Label,
   CustomInput,
 } from "reactstrap";
-import { MdAdd, MdCancel } from "react-icons/md";
+import { MdCancel } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 // core components
 import Header from "components/Headers/Header.js";
 import { useState } from "react";
 import "./Inputfile.css";
-import uploadImg from "../../assets/img/upload.png";
-import { Delete, Trash2 } from "react-feather";
-import Multiselect from "multiselect-react-dropdown";
+// import uploadImg from "../../assets/img/upload.png";
+// import { Delete, Trash2 } from "react-feather";
+// import Multiselect from "multiselect-react-dropdown";
 
 const UserDetails = () => {
   const [Category, setCategory] = useState({});

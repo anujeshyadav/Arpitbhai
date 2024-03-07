@@ -3,15 +3,15 @@ import {
   Card,
   CardHeader,
   CardFooter,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  DropdownToggle,
+  // DropdownMenu,
+  // DropdownItem,
+  // UncontrolledDropdown,
+  // DropdownToggle,
   Media,
   Pagination,
   PaginationItem,
   PaginationLink,
-  Progress,
+  // Progress,
   Table,
   Container,
   Row,
@@ -21,7 +21,7 @@ import {
   Input,
 } from "reactstrap";
 // core components
-import { MdAdd } from "react-icons/md";
+// import { MdAdd } from "react-icons/md";
 
 import Header from "components/Headers/Header.js";
 import { useNavigate } from "react-router-dom";

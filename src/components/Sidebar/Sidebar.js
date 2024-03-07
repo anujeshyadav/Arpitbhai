@@ -6,17 +6,17 @@ import logos from "./../../assets/img/download.jfif";
 
 // reactstrap components
 import {
-  Button,
-  Card,
-  CardHeader,
-  CardBody,
-  CardTitle,
+  // Button,
+  // Card,
+  // CardHeader,
+  // CardBody,
+  // CardTitle,
   Collapse,
   DropdownMenu,
   DropdownItem,
   UncontrolledDropdown,
   DropdownToggle,
-  FormGroup,
+  // FormGroup,
   Form,
   Input,
   InputGroupAddon,
@@ -28,21 +28,21 @@ import {
   NavItem,
   NavLink,
   Nav,
-  Progress,
-  Table,
+  // Progress,
+  // Table,
   Container,
   Row,
   Col,
 } from "reactstrap";
 
-var ps;
+// var ps;
 
 const Sidebar = (props) => {
   const [collapseOpen, setCollapseOpen] = useState();
   // verifies if routeName is the one active (in browser input)
-  const activeRoute = (routeName) => {
-    return props.location.pathname.indexOf(routeName) > -1 ? "active" : "";
-  };
+  // const activeRoute = (routeName) => {
+  //   return props.location.pathname.indexOf(routeName) > -1 ? "active" : "";
+  // };
   // toggles collapse between opened and closed (true/false)
   const toggleCollapse = () => {
     setCollapseOpen((data) => !data);
@@ -54,7 +54,7 @@ const Sidebar = (props) => {
   // creates the links that appear in the left menu / Sidebar
   const createLinks = (routes) => {
     return routes.map((prop, key) => {
-      if (prop.hidden == false) {
+      if (prop.hidden === false) {
         return (
           <NavItem key={key}>
             <NavLink
@@ -73,7 +73,7 @@ const Sidebar = (props) => {
     });
   };
 
-  const { bgColor, routes, logo } = props;
+  const { routes, logo } = props;
   let navbarBrandProps;
   if (logo && logo.innerLink) {
     navbarBrandProps = {
