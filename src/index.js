@@ -13,8 +13,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  // <HashRouter>
-  <BrowserRouter>
+  <HashRouter>
+    {/* <BrowserRouter> */}
     <Routes>
       <Route path="/admin/*" element={<AdminLayout />} />
       <Route path="/auth/*" element={<AuthLayout />} />
@@ -22,6 +22,7 @@ root.render(
       {/* <Route path="*" element={<Navigate to="/admin/index" replace />} /> */}
       <Route path="/" element={<Navigate to="/auth/login" replace />} />
     </Routes>
-  </BrowserRouter>
-  // </HashRouter>
+    {/* </BrowserRouter> */}
+    //{" "}
+  </HashRouter>
 );
